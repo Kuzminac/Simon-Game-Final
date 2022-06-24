@@ -1,12 +1,12 @@
 let on;
-let compOrder = [];
+let order = [];
 let playerOrder = [];
 let correct;
 let turn;
 let compTurn;
 let flash;
 let intervalId;
-let sound;
+let sound = true;
 
 const blueCard = document.querySelector(".blue");
 const redCard = document.querySelector(".red");
@@ -24,6 +24,7 @@ onButton.addEventListener('click', (event) => {
     else {
         on = false;
         turnCounter.innerHTML = "";
+        clearInterval(intervalId);
     }
 });
 
@@ -42,7 +43,7 @@ function play() {
     intervalId = 0;
     turnCounter.innerHTML = turn;
     for (let i = 0; i< 100; i++) {
-        compOrder.push(Math.floor(Math.random() * 4) + 1)
+        order.push(Math.floor(Math.random() * 4) + 1)
     }
     compTurn = true;
 
@@ -53,17 +54,63 @@ function gameTurn() {
     on = false;
 
     if (flash == turn) {
+        clearInterval(intervalId);
         compTurn = false;
+        clearColor();
         on = true;
     }
 
     if (compTurn) {
+        clearColor();
         setTimeout(() => {
-            if (compOrder[flash] == 1) one()
-            if (compOrder[flash] == 2) two()
-            if (compOrder[flash] == 3) three()
-            if (compOrder[flash] == 4) four()
+            if (order[flash] == 1) one()
+            if (order[flash] == 2) two()
+            if (order[flash] == 3) three()
+            if (order[flash] == 4) four()
             flash++
         }, 200)
     }
+}
+
+function one() {
+    if (sound) {
+        let audio = document.getElementById("clip1");
+        audio.play();
+    }
+    sound = true;
+    redCard.style.backgroundColor = "tomato";
+}
+
+function two() {
+    if (sound) {
+        let audio = document.getElementById("clip2");
+        audio.play();
+    }
+    sound = true;
+    blueCard.style.backgroundColor = "lightskyblue";
+}
+
+function three() {
+    if (sound) {
+        let audio = document.getElementById("clip3");
+        audio.play();
+    }
+    sound = true;
+    yellowCard.style.backgroundColor = "lightyellow";
+}
+
+function four() {
+    if (sound) {
+        let audio = document.getElementById("clip4");
+        audio.play();
+    }
+    sound = true;
+    greenCard.style.backgroundColor = "lightgreen";
+}
+
+function clearColor() {
+    redCard.style.backgroundColor = "darkred";
+    blueCard.style.backgroundColor = "darkblue";
+    yellowCard.style.backgroundColor = "goldenrod";
+    greenCard.style.backgroundColor = "darkgreen";
 }
