@@ -169,8 +169,11 @@ function check() {
         setTimeout(() => {
             let audio = document.getElementById("clip6");
             audio.play();
+        }, 10)
+        setTimeout(() => {
             alert("YOU HAVE LOST");
-        }, 100);
+        }, 300);
+
     }
 
     if (turn == playerOrder.length) {
@@ -179,9 +182,11 @@ function check() {
         compTurn = true;
         flash = 0;
         turnCounter.innerHTML = turn;
-        intervalId = setInterval(gameTurn, 800)
+        intervalId = setInterval(gameTurn, 1000)
         setTimeout(() => {
             alert("CONGRATULATIONS")
+        }, 200)
+        setTimeout(() => {
             let audio = document.getElementById("clip5");
             audio.play();
         }, 180)
