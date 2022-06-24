@@ -114,3 +114,43 @@ function clearColor() {
     yellowCard.style.backgroundColor = "goldenrod";
     greenCard.style.backgroundColor = "darkgreen";
 }
+
+greenCard.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(4);
+        four();
+            setTimeout(() => {
+                clearColor()
+            }, 300)
+    }
+})
+
+blueCard.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(2);
+        two();
+            setTimeout(() => {
+                clearColor()
+            }, 300)
+    }
+})
+
+redCard.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(1);
+        one();
+            setTimeout(() => {
+                clearColor()
+            }, 300)
+    }
+})
+
+yellowCard.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(3);
+        three();
+            setTimeout(() => {
+                clearColor()
+            }, 300)
+    }
+})
