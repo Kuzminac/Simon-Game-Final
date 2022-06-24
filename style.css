@@ -42,3 +42,65 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-gap: 36px;
 }
+
+.bottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 60px auto;
+    grid-gap: 142px;
+}
+
+.checkbox{
+    position: absolute;
+    margin-top: 12px;
+}
+
+.on {
+    border-radius: 10%;
+    width: 60px;
+    height: 25px;
+}
+
+.text {
+    text-align: center;
+}
+
+.startButton {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 220px;
+}
+
+.start {
+    width: 90px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: green;
+    color: #fff;
+}
+
+.turn-counter {
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 450px;
+}
+
+.turn {
+    background: #440101;
+    color: red;
+    font-size: 20px;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.count {
+    text-align: center;
+}
