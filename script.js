@@ -25,6 +25,7 @@ onButton.addEventListener('click', (event) => {
         on = false;
         turnCounter.innerHTML = "";
         clearInterval(intervalId);
+        clearColor();
     }
 });
 
@@ -38,16 +39,16 @@ function play() {
     order = [];
     playerOrder = [];
     flash = 0;
-    turn = 1;
+    turn = 3;
     correct = true;
     intervalId = 0;
-    turnCounter.innerHTML = turn;
+    turnCounter.innerHTML = turn -2;
     for (let i = 0; i< 100; i++) {
         order.push(Math.floor(Math.random() * 4) + 1)
     }
     compTurn = true;
 
-    intervalId = setInterval(gameTurn, 800)
+    intervalId = setInterval(gameTurn, 1200)
 }
 
 function gameTurn() {
@@ -68,7 +69,7 @@ function gameTurn() {
             if (order[flash] == 3) three()
             if (order[flash] == 4) four()
             flash++
-        }, 200)
+        }, 300)
     }
 }
 
@@ -172,7 +173,9 @@ function check() {
         }, 10)
         setTimeout(() => {
             alert("YOU HAVE LOST");
-        }, 300);
+        }, 200);
+
+        on = true;
 
     }
 
@@ -181,7 +184,7 @@ function check() {
         playerOrder = [];
         compTurn = true;
         flash = 0;
-        turnCounter.innerHTML = turn;
+        turnCounter.innerHTML = turn - 2;
         intervalId = setInterval(gameTurn, 1000)
         setTimeout(() => {
             alert("CONGRATULATIONS")
@@ -189,6 +192,6 @@ function check() {
         setTimeout(() => {
             let audio = document.getElementById("clip5");
             audio.play();
-        }, 180)
+        }, 150)
     }
 }
