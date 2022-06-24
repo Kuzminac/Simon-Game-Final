@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simon Game</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hello
+    <div class="container">
+        <div class="title">
+            Simon Game
+        </div>
+        <div class="grid">
+            <div class="card green"></div>
+            <div class="card yellow"></div>
+            <div class="card blue"></div>
+            <div class="card red"></div>
+        </div>
+        <div class="bottom">
+            <div class="checkbox">
+                <input type="checkbox" class="on">
+                <div class="text">ON/OFF</div>
+            </div>
+            <div class="startButton">
+                <button class="start">Start</button>
+            </div>
+            <div class="turn-counter">
+                <div class="turn"></div>
+                <div class="count">turn</div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
