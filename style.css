@@ -1,0 +1,44 @@
+body {
+    background: rgb(160, 160, 160);
+}
+
+.container {
+    margin: 60px auto;
+    max-width: 540px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 54px;
+    font-weight: 700;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.card {
+    width: 240px;
+    height: 240px;
+    border-radius: 6px;
+}
+.green {
+    background: darkgreen;
+}
+
+.yellow {
+    background: goldenrod;
+}
+
+.blue {
+    background: darkblue;
+}
+
+.red {
+    background: darkred;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 36px;
+}
