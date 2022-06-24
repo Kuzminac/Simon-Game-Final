@@ -119,6 +119,7 @@ greenCard.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(4);
         four();
+        check();
             setTimeout(() => {
                 clearColor()
             }, 300)
@@ -129,6 +130,7 @@ blueCard.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(2);
         two();
+        check();
             setTimeout(() => {
                 clearColor()
             }, 300)
@@ -139,6 +141,7 @@ redCard.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(1);
         one();
+        check();
             setTimeout(() => {
                 clearColor()
             }, 300)
@@ -149,8 +152,38 @@ yellowCard.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(3);
         three();
+        check();
             setTimeout(() => {
                 clearColor()
             }, 300)
     }
 })
+
+function check() {
+    if (playerOrder[playerOrder.length -1] !== order[playerOrder.length - 1])
+        correct = false;
+
+    if (!correct) {
+        turn = 0;
+        turnCounter.innerHTML = "FAIL";
+        setTimeout(() => {
+            let audio = document.getElementById("clip6");
+            audio.play();
+            alert("YOU HAVE LOST");
+        }, 100);
+    }
+
+    if (turn == playerOrder.length) {
+        turn ++;
+        playerOrder = [];
+        compTurn = true;
+        flash = 0;
+        turnCounter.innerHTML = turn;
+        intervalId = setInterval(gameTurn, 800)
+        setTimeout(() => {
+            alert("CONGRATULATIONS")
+            let audio = document.getElementById("clip5");
+            audio.play();
+        }, 180)
+    }
+}
