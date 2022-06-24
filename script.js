@@ -48,3 +48,22 @@ function play() {
 
     intervalId = setInterval(gameTurn, 800)
 }
+
+function gameTurn() {
+    on = false;
+
+    if (flash == turn) {
+        compTurn = false;
+        on = true;
+    }
+
+    if (compTurn) {
+        setTimeout(() => {
+            if (compOrder[flash] == 1) one()
+            if (compOrder[flash] == 2) two()
+            if (compOrder[flash] == 3) three()
+            if (compOrder[flash] == 4) four()
+            flash++
+        }, 200)
+    }
+}
